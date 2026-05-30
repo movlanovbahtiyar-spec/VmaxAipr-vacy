@@ -114,7 +114,8 @@
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 24px;
+            align-items: center;
             list-style: none;
         }
 
@@ -128,6 +129,30 @@
 
         .nav-links a:hover {
             color: var(--text-primary);
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-left: 8px;
+        }
+        .lang-switch a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .lang-switch a.active {
+            color: var(--accent-primary);
+        }
+        .lang-divider {
+            color: var(--text-muted);
         }
 
         /* Policy Content Layout */
@@ -247,6 +272,13 @@
                 <li><a href="index.html#destek">Destek</a></li>
                 <li><a href="privacy-policy.html">Privacy Policy</a></li>
                 <li><a href="terms.html">Terms of Service</a></li>
+                <li class="lang-switch">
+                    <a href="terms.html" class="active">EN</a>
+                    <span class="lang-divider">|</span>
+                    <a href="terms-tr.html">TR</a>
+                    <span class="lang-divider">|</span>
+                    <a href="terms-ru.html">RU</a>
+                </li>
             </ul>
         </div>
     </header>

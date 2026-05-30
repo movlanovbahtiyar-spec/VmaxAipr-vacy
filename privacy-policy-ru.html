@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VMAX – Политика конфиденциальности</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #07070a;
+            --card-bg: rgba(15, 15, 25, 0.4);
+            --card-border: rgba(255, 255, 255, 0.06);
+            --card-border-hover: rgba(168, 85, 247, 0.3);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            --accent-primary: #a855f7;
+            --accent-gradient: linear-gradient(135deg, #a855f7 0%, #06b6d4 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(168, 85, 247, 0.2);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(168, 85, 247, 0.4);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Ambient Glows */
+        .glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, rgba(0,0,0,0) 70%);
+            filter: blur(40px);
+            z-index: -1;
+            pointer-events: none;
+        }
+        .glow-1 {
+            top: -100px;
+            right: -100px;
+        }
+        .glow-2 {
+            bottom: 200px;
+            left: -150px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.08) 0%, rgba(0,0,0,0) 70%);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header Navigation */
+        header {
+            border-bottom: 1px solid var(--card-border);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(7, 7, 10, 0.8);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: 4px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .logo span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-left: 8px;
+        }
+        .lang-switch a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .lang-switch a.active {
+            color: var(--accent-primary);
+        }
+        .lang-divider {
+            color: var(--text-muted);
+        }
+
+        /* Policy Content Layout */
+        .content-wrapper {
+            padding: 60px 0 80px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #ffffff 40%, #e0e0e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .effective-date {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 40px;
+        }
+
+        .highlight-box {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-left: 4px solid var(--accent-primary);
+            padding: 24px;
+            border-radius: 0 16px 16px 0;
+            margin: 32px 0;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .highlight-box strong {
+            color: var(--text-primary);
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 40px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 24px 0 12px;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        ul {
+            margin: 12px 0 20px 24px;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #c084fc;
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--card-border);
+            padding: 48px 0;
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 24px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">V<span>MAX</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#destek">Поддержка</a></li>
+                <li><a href="privacy-policy-ru.html">Конфиденциальность</a></li>
+                <li><a href="terms-ru.html">Условия использования</a></li>
+                <li class="lang-switch">
+                    <a href="privacy-policy.html">EN</a>
+                    <span class="lang-divider">|</span>
+                    <a href="privacy-policy-tr.html">TR</a>
+                    <span class="lang-divider">|</span>
+                    <a href="privacy-policy-ru.html" class="active">RU</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container content-wrapper">
+        <h1>Политика конфиденциальности</h1>
+        <p class="effective-date">Дата вступления в силу: 7 мая 2026 г. (Обновлено: 24 мая 2026 г.)</p>
+
+        <p>VMAX («мы», «наш» или «нам») стремится защищать вашу конфиденциальность. Настоящая Политика конфиденциальности описывает, как мы собираем, используем и защищаем вашу информацию при использовании мобильного приложения VMAX («Приложение»).</p>
+
+        <div class="highlight-box">
+            <strong>Основное положение:</strong> Ваши фотографии и личные данные обрабатываются локально на вашем устройстве или через безопасные сервисы искусственного интеллекта. Мы не храним ваши фотографии на наших серверах и не продаем ваши данные третьим лицам.
+        </div>
+
+        <h2>1. Сбор информации</h2>
+
+        <h3>1.1 Предоставляемая вами информация</h3>
+        <ul>
+            <li><strong>Имя:</strong> Используется для персонализации вашего опыта работы с Приложением.</li>
+            <li><strong>Возраст / Дата рождения:</strong> Используется для калибровки моделей анализа, соответствующих вашей возрастной группе.</li>
+            <li><strong>Пол:</strong> Используется для предоставления анализа и рекомендаций с учетом пола.</li>
+            <li><strong>Рост и вес:</strong> Используется для комплексного физического анализа.</li>
+            <li><strong>Фотографии лица:</strong> Используются исключительно для анализа лица на базе ИИ. Фотографии обрабатываются в режиме реального времени и <strong>не хранятся на наших серверах</strong>.</li>
+        </ul>
+
+        <h3>1.2 Автоматически собираемая информация</h3>
+        <ul>
+            <li><strong>Информация об устройстве:</strong> Модель устройства, версия операционной системы и уникальные идентификаторы устройства для обеспечения работоспособности приложения.</li>
+            <li><strong>Данные об использовании:</strong> То, как вы взаимодействуете с Приложением (посещаемые экраны, используемые функции), для улучшения пользовательского опыта.</li>
+            <li><strong>Информация о покупках:</strong> Статус подписки и идентификаторы транзакций, управляемые через нашу платежную систему.</li>
+        </ul>
+
+        <h3>1.3 Информация, которую мы НЕ собираем</h3>
+        <ul>
+            <li>Мы не собираем ваш адрес электронной почты, номер телефона или учетные записи в социальных сетях внутри приложения.</li>
+            <li>Мы не запрашиваем постоянный доступ к вашей библиотеке фотографий или контактам.</li>
+            <li>Мы не собираем точные данные о вашем местоположении.</li>
+        </ul>
+
+        <h2>2. Как мы используем вашу информацию</h2>
+        <ul>
+            <li><strong>Анализ лица:</strong> Ваши фотографии отправляются в ИИ-сервис Google Gemini для анализа в реальном времени и не сохраняются после обработки.</li>
+            <li><strong>Персонализация:</strong> Данные вашего профиля (имя, возраст, пол) используются для адаптации рекомендаций и результатов анализа.</li>
+            <li><strong>Управление подписками:</strong> Данные о покупках обрабатываются RevenueCat для управления статусом вашей подписки.</li>
+            <li><strong>Улучшение приложения:</strong> Анонимизированные данные об использовании помогают нам улучшать функции и производительность Приложения.</li>
+        </ul>
+
+        <h2>3. Хранение и безопасность данных</h2>
+        <p>Все предоставляемые вами личные данные (имя, возраст, пол, рост, вес) хранятся <strong>локально на вашем устройстве</strong> с использованием безопасного хранилища устройства. Эти данные не передаются и не хранятся на внешних серверах, за исключением случаев, описанных ниже:</p>
+        <ul>
+            <li><strong>Фотографии лица:</strong> Временно передаются в Google Gemini AI для анализа. Фотографии обрабатываются в реальном времени и не хранятся Google по окончании сеанса обработки в соответствии с <a href="https://ai.google.dev/terms" target="_blank">Условиями использования Google AI</a>.</li>
+            <li><strong>Данные подписки:</strong> Управляются <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat</a>, которая обрабатывает токены покупок из Apple App Store и Google Play Store.</li>
+        </ul>
+
+        <h2>4. Сторонние сервисы</h2>
+        <p>Мы используем следующие сторонние сервисы:</p>
+        <ul>
+            <li><strong>Google Gemini AI</strong> – Для анализа лица. Применяется <a href="https://policies.google.com/privacy" target="_blank">Политика конфиденциальности Google</a>.</li>
+            <li><strong>RevenueCat</strong> – Для управления подписками и покупками. Применяется <a href="https://www.revenuecat.com/privacy" target="_blank">Политика конфиденциальности RevenueCat</a>.</li>
+            <li><strong>Apple App Store / Google Play Store</strong> – Для распространения приложения и встроенных покупок.</li>
+        </ul>
+
+        <h2>5. Хранение данных</h2>
+        <ul>
+            <li><strong>Локальные данные:</strong> Хранятся на вашем устройстве до тех пор, пока вы не удалите данные приложения или само Приложение.</li>
+            <li><strong>Фотографии лица:</strong> Не сохраняются. Обрабатываются в реальном времени и сразу удаляются.</li>
+            <li><strong>Данные подписки:</strong> Хранятся в RevenueCat в течение срока действия вашей подписки плюс любой установленный законом период хранения.</li>
+        </ul>
+
+        <h2>6. Ваши права</h2>
+        <p>Вы имеете право:</p>
+        <ul>
+            <li><strong>Удалить свои данные:</strong> Воспользуйтесь опцией «Очистить все данные» в настройках профиля Приложения, чтобы удалить все локально сохраненные данные.</li>
+            <li><strong>Доступ к вашим данным:</strong> Все ваши данные хранятся локально на вашем устройстве и доступны через Приложение.</li>
+            <li><strong>Отказ от использования:</strong> Вы можете прекратить использование Приложения в любое время. Удаление Приложения стирает все локально сохраненные данные.</li>
+        </ul>
+
+        <h2>7. Конфиденциальность детей</h2>
+        <p>VMAX не предназначен для использования лицами младше 18 лет. Мы намеренно не собираем личную информацию о детях. Приложение включает этап проверки возраста при регистрации. Если нам станет известно, что мы собрали личную информацию ребенка младше 18 лет, мы примем меры для ее удаления.</p>
+
+        <h2>8. Международные пользователи</h2>
+        <p>Если вы получаете доступ к Приложению из Европейской экономической зоны (ЕЭЗ), Великобритании или других регионов с законами о защите данных, обратите внимание, что ваши фотографии лица могут обрабатываться ИИ-сервисами Google, что может повлечь за собой передачу данных на серверы за пределами вашего региона. Используя Приложение, вы соглашаетесь на эту передачу.</p>
+
+        <h2>9. Изменения в этой Политике конфиденциальности</h2>
+        <p>Мы можем время от время обновлять настоящую Политику конфиденциальности. Мы сообщим вам о любых существенных изменениях, опубликовав обновленную политику в Приложении. Ваше дальнейшее использование Приложения после внесения изменений означает согласие с обновленной политикой.</p>
+
+        <h2>10. Контакты</h2>
+        <p>Если у вас есть вопросы или сомнения по поводу настоящей Политики конфиденциальности или наших методов работы с данными, свяжитесь с нами по адресу:</p>
+        <p><strong>Электронная почта:</strong> <a href="mailto:movlanovbahtiyar@gmail.com">movlanovbahtiyar@gmail.com</a></p>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">V<span>MAX</span></div>
+            <ul class="footer-links">
+                <li><a href="privacy-policy-ru.html">Конфиденциальность</a></li>
+                <li><a href="terms-ru.html">Условия использования</a></li>
+            </ul>
+            <p>&copy; 2026 VMAX. Все права защищены.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
